@@ -1,13 +1,14 @@
-numbers = [4, 9, 3, 6, 2]
+nums = [4, 9, 3, 6, 2]
+print(nums)
 
-print(numbers)
+for index in range(len(nums)):
+    smallest = index
+    for nextElement in range(index+1, len(nums)):
+        if nums[smallest] > nums[nextElement]:
+            smallest = nextElement
 
-for i in range(len(numbers) - 1):
-    min_index = i
-    for j in range(i+1, len(numbers)):
-        if numbers[j] < numbers[min_index]:
-            min_index = j
+    nums[index], nums[smallest] = nums[smallest], nums[index]
+
+print(nums)
+        
     
-    numbers[i], numbers[min_index] = numbers[min_index], numbers[i]
-
-print(numbers)
